@@ -5,3 +5,13 @@ class ProductConfig {
 
   ProductConfig._(this.apiKey);
 }
+
+class ProductLazySingleton {
+  static ProductLazySingleton? _instance;
+  static ProductLazySingleton get instance {
+    if (_instance == null) _instance = ProductLazySingleton._init();
+    return instance;
+  }
+
+  ProductLazySingleton._init();
+}
